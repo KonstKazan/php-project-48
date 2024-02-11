@@ -1,0 +1,21 @@
+{
+    "name": "hexlet/code",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        },
+        "files": [
+            "vendor/docopt/docopt/src/docopt.php",
+            "src/Differ.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Konstantin",
+            "email": "konst.kazan@gmail.com"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
