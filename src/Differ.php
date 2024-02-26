@@ -1,6 +1,6 @@
 <?php
 
-function gendiff(string $fileOne, string $fileTwo)
+function gendiff(string $fileOne, string $fileTwo): string
 {
     $one = file_get_contents(__DIR__ . "/.." . $fileOne);
     $decodeFileOne = json_decode($one, true);
@@ -8,6 +8,7 @@ function gendiff(string $fileOne, string $fileTwo)
     $decodeFileTwo = json_decode($two, true);
     $mergeResult = array_merge($decodeFileOne, $decodeFileTwo);
     ksort($mergeResult);
+    $result = [];
     foreach ($mergeResult as $key => $value) {
         if (array_key_exists($key, $decodeFileOne) && array_key_exists($key, $decodeFileTwo)) {
             if ($decodeFileOne[$key] === $decodeFileTwo[$key]) {
@@ -23,5 +24,5 @@ function gendiff(string $fileOne, string $fileTwo)
         }
     }
     $resultEnd = implode(PHP_EOL, $result) . PHP_EOL;
-    print_r($resultEnd);
+    return $resultEnd;
 }
