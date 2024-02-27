@@ -1,10 +1,12 @@
 <?php
 
+namespace App\Diff;
+
 function gendiff(string $fileOne, string $fileTwo): string
 {
-    $one = file_get_contents(__DIR__ . "/.." . $fileOne);
+    $one = file_get_contents(dirname(__DIR__, 1) . "/" . $fileOne);
     $decodeFileOne = json_decode($one, true);
-    $two = file_get_contents(__DIR__ . "/.." . $fileTwo);
+    $two = file_get_contents(dirname(__DIR__, 1) . "/" . $fileTwo);
     $decodeFileTwo = json_decode($two, true);
     $mergeResult = array_merge($decodeFileOne, $decodeFileTwo);
     ksort($mergeResult);
