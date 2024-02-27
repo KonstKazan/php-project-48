@@ -5,8 +5,14 @@ namespace App\Diff;
 function gendiff(string $fileOne, string $fileTwo): string
 {
     $one = file_get_contents(dirname(__DIR__, 1) . "/" . $fileOne);
+    if ($one === false) {
+        return 'File not found';
+    }
     $decodeFileOne = json_decode($one, true);
     $two = file_get_contents(dirname(__DIR__, 1) . "/" . $fileTwo);
+    if ($two === false) {
+        return 'File not found';
+    }
     $decodeFileTwo = json_decode($two, true);
     $mergeResult = array_merge($decodeFileOne, $decodeFileTwo);
     ksort($mergeResult);
