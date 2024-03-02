@@ -2,6 +2,8 @@
 
 <?php
 
+use function App\Parsers\parser;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $doc = <<<DOC
@@ -19,8 +21,8 @@ Options:
  
 DOC;
  
-$args = Docopt::handle($doc, array('version'=>'Generate diff 0.1'));
+$args = Docopt::handle($doc, array('version'=>'Generate diff 0.2'));
 $firstFile = $args["<firstFile>"];
 $secondFile = $args["<secondFile>"];
 
-print_r(gendiff($firstFile, $secondFile));
+print_r(parser($firstFile, $secondFile));

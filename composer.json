@@ -6,9 +6,16 @@
         },
         "files": [
             "vendor/docopt/docopt/src/docopt.php",
-            "src/Differ.php"
+            "src/Differ.php",
+            "src/Parsers.php",
+            "vendor/autoload.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+          "Hexlet\\Code\\Tests\\": "tests"
+        }
+      },
     "authors": [
         {
             "name": "Konstantin",
@@ -20,7 +27,8 @@
         "tightenco/collect": "^9.33",
         "nesbot/carbon": "^2.64",
         "symfony/string": "^6.2",
-        "phpstan/phpstan": "^1.9.2"
+        "phpstan/phpstan": "^1.9.2",
+        "symfony/yaml": "^7.0"
       },
       "require-dev": {
         "psy/psysh": "@stable",
