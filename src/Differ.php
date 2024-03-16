@@ -2,26 +2,14 @@
 
 namespace App\Diff;
 
-function gendiff(array $decodeFileOne, array $decodeFileTwo): string
-{
+use function App\Formatter\formatThree;
+use function App\Parsers\parse;
+use function App\Utilits\buildThree;
 
-    $mergeResult = array_merge($decodeFileOne, $decodeFileTwo);
-    ksort($mergeResult);
-    $result = [];
-    foreach ($mergeResult as $key => $value) {
-        if (array_key_exists($key, $decodeFileOne) && array_key_exists($key, $decodeFileTwo)) {
-            if ($decodeFileOne[$key] === $decodeFileTwo[$key]) {
-                $result[] = '  ' . $key . ': ' . $value;
-            } else {
-                $result[] = '- ' . $key . ': ' . var_export($decodeFileOne[$key], true);
-                $result[] = '+ ' . $key . ': ' . var_export($decodeFileTwo[$key], true);
-            }
-        } elseif (array_key_exists($key, $decodeFileOne)) {
-            $result[] = '- ' . $key . ': ' . var_export($decodeFileOne[$key], true);
-        } elseif (array_key_exists($key, $decodeFileTwo)) {
-            $result[] = '+ ' . $key . ': ' . var_export($decodeFileTwo[$key], true);
-        }
-    }
-    $resultEnd = implode(PHP_EOL, $result) . PHP_EOL;
-    return $resultEnd;
+function gendiff(string $pathToFileOne, string $pathToFileTwo, string $format = 'stylish')
+{
+    $decodeFileOne = parse($pathToFileOne);
+    $decodeFileTwo = parse($pathToFileTwo);
+    $three = buildThree($decodeFileOne, $decodeFileTwo);
+    return formatThree($three, $format);
 }

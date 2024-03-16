@@ -2,29 +2,19 @@
 
 namespace App\Parsers;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
 use Symfony\Component\Yaml\Yaml;
 
-use function App\Diff\gendiff;
-
-function parser(string $pathToFileOne, string $pathToFileTwo): string
+function parse(string $pathToFile,): array
 {
-    $fileOne = file_get_contents(dirname(__DIR__, 1) . "/" . $pathToFileOne);
-    if ($fileOne === false) {
-        return 'File not found';
-    }
-    $fileTwo = file_get_contents(dirname(__DIR__, 1) . "/" . $pathToFileTwo);
-    if ($fileTwo === false) {
+    $file = file_get_contents(dirname(__DIR__, 1) . "/" . $pathToFile);
+    if ($file === false) {
         return 'File not found';
     }
 
-    if ((pathinfo($pathToFileOne, PATHINFO_EXTENSION) === 'json') && ((pathinfo($pathToFileTwo, PATHINFO_EXTENSION) === 'json'))) {
-        $decodeFileOne = json_decode($fileOne, true);
-        $decodeFileTwo = json_decode($fileTwo, true);
+    if ((pathinfo($pathToFile, PATHINFO_EXTENSION) === 'json')) {
+        $decodeFile = json_decode($file, true);
     } else {
-        $decodeFileOne = Yaml::parse($fileOne);
-        $decodeFileTwo = Yaml::parse($fileTwo);
+        $decodeFile = Yaml::parse($file);
     }
-    return gendiff($decodeFileOne, $decodeFileTwo);
+    return $decodeFile;
 }
