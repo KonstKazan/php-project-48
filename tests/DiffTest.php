@@ -8,12 +8,12 @@ use function App\Diff\gendiff;
 
 class DiffTest extends TestCase
 {
-    public $pathToJsonOne;
-    public $pathToJsonTwo;
-    public $pathToYamlOne;
-    public $pathToYamlTwo;
-    public $pathToResultStylish;
-    public $pathToResultPlain;
+    private string $pathToJsonOne;
+    private string $pathToJsonTwo;
+    private string $pathToYamlOne;
+    private string $pathToYamlTwo;
+    private string $pathToResultStylish;
+    private string $pathToResultPlain;
 
     public function setUp(): void
     {
