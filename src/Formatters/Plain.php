@@ -2,7 +2,7 @@
 
 namespace App\Formatters\Plain;
 
-function convertValue($value)
+function convertValue(mixed $value): mixed
 {
     if (!is_array($value)) {
         if ($value === 'null') {
@@ -19,7 +19,7 @@ function convertValue($value)
     return "[complex value]";
 }
 
-function formatPlain(array $astTree, $propertyName = '')
+function formatPlain(array $astTree, string $propertyName = ''): string
 {
     $result = array_map(function ($node) use ($propertyName) {
 
@@ -34,8 +34,8 @@ function formatPlain(array $astTree, $propertyName = '')
             return 'Property ' . "'$newPropertyName'" . ' was removed';
         } elseif ($status === 'changed') {
             $convertValue = convertValue($value);
-            $convertValuTwo = convertValue($valueTwo);
-            return 'Property ' . "'$newPropertyName'" . ' was updated. From ' . $convertValue . ' to ' . $convertValuTwo;
+            $convertValueTwo = convertValue($valueTwo);
+            return 'Property ' . "$newPropertyName" . ' was updated. From ' . $convertValue . ' to ' . $convertValueTwo;
         } elseif ($status === 'unchanged') {
             return;
         }

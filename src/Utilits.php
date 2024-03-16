@@ -2,12 +2,12 @@
 
 namespace App\Utilits;
 
-function makeNode(string $status, string $key, $valueOne, $valueTwo = null)
+function makeNode(string $status, string $key, mixed $valueOne, mixed $valueTwo = null): array
 {
     return ['status' => $status, 'key' => $key, 'valueOne' => $valueOne, 'valueTwo' => $valueTwo];
 }
 
-function toString($value)
+function toString(mixed $value): mixed
 {
     $iter = function ($value) use (&$iter) {
         if (!is_array($value)) {
@@ -28,7 +28,7 @@ function toString($value)
     return $iter($value);
 }
 
-function buildThree($decodeFileOne, $decodeFileTwo)
+function buildThree(array $decodeFileOne, array $decodeFileTwo): array
 {
     $fileOneKeys = array_keys($decodeFileOne);
     $fileTwoKeys = array_keys($decodeFileTwo);
@@ -40,7 +40,7 @@ function buildThree($decodeFileOne, $decodeFileTwo)
     return array_map(fn ($key) => createAst($key, $decodeFileOne, $decodeFileTwo), $sortArrayKeys);
 }
 
-function createAst($key, $fileOne, $fileTwo)
+function createAst(string $key, array $fileOne, array $fileTwo): array
 {
     $valueOne = isset($fileOne[$key]) ? $fileOne[$key] : null;
     $valueTwo = isset($fileTwo[$key]) ? $fileTwo[$key] : null;

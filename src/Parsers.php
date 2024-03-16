@@ -8,7 +8,7 @@ function parse(string $pathToFile,): array
 {
     $file = file_get_contents(dirname(__DIR__, 1) . "/" . $pathToFile);
     if ($file === false) {
-        return 'File not found';
+        exit('File not found');
     }
 
     if ((pathinfo($pathToFile, PATHINFO_EXTENSION) === 'json')) {
