@@ -32,4 +32,4 @@ Options:
 ```
 
 ### Usage example
-(https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs)
+[!(https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs)]
