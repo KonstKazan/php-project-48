@@ -4,7 +4,7 @@ namespace Differ\Parsers;
 
 use Symfony\Component\Yaml\Yaml;
 
-function getRealPath(string $pathToFile): string
+function getRealPath(string $pathToFile): mixed
 {
     $addedPart = $pathToFile[0] === '/' ? '' : __DIR__ . "/../";
     $fullPath = $addedPart . $pathToFile;

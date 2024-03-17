@@ -7,25 +7,46 @@ function makeNode(string $status, string $key, mixed $valueOne, mixed $valueTwo 
     return ['status' => $status, 'key' => $key, 'valueOne' => $valueOne, 'valueTwo' => $valueTwo];
 }
 
+// function toString(mixed $value): mixed
+// {
+//     $iter = function ($value) use (&$iter) {
+//         if (!is_array($value)) {
+//             if ($value === null) {
+//                 return 'null';
+//             }
+//             return trim(var_export($value, true), "'");
+//         }
+
+//         $keys = array_keys($value);
+//         return array_map(function ($key) use ($value, $iter) {
+//             $value = (is_array($value[$key])) ? $iter($value[$key]) : $value[$key];
+
+//             return makeNode('unchanged', $key, $value);
+//         }, $keys);
+//     };
+
+//     return $iter($value);
+// }
+
 function toString(mixed $value): mixed
 {
-    $iter = function ($value) use (&$iter) {
-        if (!is_array($value)) {
-            if ($value === null) {
-                return 'null';
-            }
-            return trim(var_export($value, true), "'");
+    // $iter = function ($value) use (&$iter) {
+    if (!is_array($value)) {
+        if ($value === null) {
+            return 'null';
         }
+        return trim(var_export($value, true), "'");
+    }
 
         $keys = array_keys($value);
-        return array_map(function ($key) use ($value, $iter) {
-            $value = (is_array($value[$key])) ? $iter($value[$key]) : $value[$key];
+        return array_map(function ($key) use ($value) {
+            $value = (is_array($value[$key])) ? toString($value[$key]) : $value[$key];
 
             return makeNode('unchanged', $key, $value);
         }, $keys);
-    };
+    // };
 
-    return $iter($value);
+    // return $iter($value);
 }
 
 function buildThree(array $decodeFileOne, array $decodeFileTwo): array
