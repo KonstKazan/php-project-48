@@ -4,9 +4,19 @@ namespace Differ\Parsers;
 
 use Symfony\Component\Yaml\Yaml;
 
+function getRealPath(string $pathToFile): string
+{
+    $addedPart = $pathToFile[0] === '/' ? '' : __DIR__ . "/../";
+    $fullPath = $addedPart . $pathToFile;
+
+    $realPath = realpath($fullPath);
+    return $realPath;
+}
+
 function parse(string $pathToFile,): array
 {
-    $file = file_get_contents(dirname(__DIR__) . $pathToFile);
+    $path = getRealPath($pathToFile);
+    $file = file_get_contents($path);
     if ($file === false) {
         exit('File not found');
     }
