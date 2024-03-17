@@ -23,10 +23,8 @@ function formatStylish(array $astTree, int $depth = 0): string
             case 'changed':
                 $normalizeValueTwo = (is_array($valueTwo)) ? formatStylish($valueTwo, $depth + 1) : $valueTwo;
                 return "{$indent}  - {$key}: {$normalizeValueOne}\n{$indent}  + {$key}: {$normalizeValueTwo}";
-            // default:
-            //     throw new \Exception("Unknown node status: {$status}");
         }
     }, $astTree);
     $result = ["{", ...$lines, "{$indent}}"];
-    return implode("\n", $result);
+    return implode(PHP_EOL, $result);
 }
