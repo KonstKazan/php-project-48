@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utilits;
+namespace Differ\Utilits;
 
 function makeNode(string $status, string $key, mixed $valueOne, mixed $valueTwo = null): array
 {

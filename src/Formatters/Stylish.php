@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Formatters\Stylish;
+namespace Differ\Formatters\Stylish;
 
 function formatStylish(array $astTree, int $depth = 0): string
 {

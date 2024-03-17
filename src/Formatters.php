@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Formatter;
+namespace Differ\Formatter;
 
-use function App\Formatters\Json\formatJson;
-use function App\Formatters\Plain\formatPlain;
-use function App\Formatters\Stylish\formatStylish;
+use function Differ\Formatters\Json\formatJson;
+use function Differ\Formatters\Plain\formatPlain;
+use function Differ\Formatters\Stylish\formatStylish;
 
 function formatThree(array $three, string $format): string|false
 {

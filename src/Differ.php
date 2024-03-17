@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Diff;
+namespace Differ\Differ;
 
-use function App\Formatter\formatThree;
-use function App\Parsers\parse;
-use function App\Utilits\buildThree;
+use function Differ\Formatter\formatThree;
+use function Differ\Parsers\parse;
+use function Differ\Utilits\buildThree;
 
 function genDiff(string $pathToFileOne, string $pathToFileTwo, string $format = 'stylish'): string|false
 {

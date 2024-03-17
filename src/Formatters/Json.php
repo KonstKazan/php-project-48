@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Formatters\Json;
+namespace Differ\Formatters\Json;
 
 function formatJson(array $astTree): string|false
 {
