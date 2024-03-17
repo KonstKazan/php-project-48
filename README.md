@@ -29,3 +29,7 @@ Options:
     -h --help                     Show this screen
     -v --version                  Show version
     --format <fmt>                Report format [default: stylish]
+```
+
+### Usage example
+(https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs)
