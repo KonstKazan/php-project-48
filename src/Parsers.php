@@ -17,9 +17,9 @@ function parse(string $pathToFile,): array
 {
     $path = getRealPath($pathToFile);
     $file = file_get_contents($path);
-    if ($file === false) {
-        exit('File not found');
-    }
+    // if ($file === false) {
+    //     exit('File not found');
+    // }
 
     if ((pathinfo($pathToFile, PATHINFO_EXTENSION) === 'json')) {
         $decodeFile = json_decode($file, true);

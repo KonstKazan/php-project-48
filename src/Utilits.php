@@ -2,6 +2,8 @@
 
 namespace Differ\Utilits;
 
+use function Functional\sort;
+
 function makeNode(string $status, string $key, mixed $valueOne, mixed $valueTwo = null): array
 {
     return ['status' => $status, 'key' => $key, 'valueOne' => $valueOne, 'valueTwo' => $valueTwo];
@@ -53,10 +55,11 @@ function buildThree(array $decodeFileOne, array $decodeFileTwo): array
     $fileOneKeys = array_keys($decodeFileOne);
     $fileTwoKeys = array_keys($decodeFileTwo);
     $arrayKeys = array_unique(array_merge($fileOneKeys, $fileTwoKeys));
-    $sortArrayKeys = $arrayKeys;
-    uasort($sortArrayKeys, function ($valueOne, $valueTwo) {
-        return strcmp($valueOne, $valueTwo);
-    });
+    // $sortArrayKeys = $arrayKeys;
+    // uasort($sortArrayKeys, function ($valueOne, $valueTwo) {
+    //     return strcmp($valueOne, $valueTwo);
+    // });
+    $sortArrayKeys = sort($arrayKeys, fn ($left, $right) => strcmp($left, $right));
     return array_map(fn ($key) => createAst($key, $decodeFileOne, $decodeFileTwo), $sortArrayKeys);
 }
 
