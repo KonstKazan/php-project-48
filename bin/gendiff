@@ -2,7 +2,7 @@
 
 <?php
 
-use function App\Diff\gendiff;
+use function App\Diff\genDiff;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -26,4 +26,4 @@ $firstFile = $args["<firstFile>"];
 $secondFile = $args["<secondFile>"];
 $format = $args['--format'];
 
-print_r(gendiff($firstFile, $secondFile, $format));
+print_r(genDiff($firstFile, $secondFile, $format));
