@@ -32,4 +32,4 @@ Options:
 ```
 
 ### Usage example
-[!(https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs)]
+[![asciicast](https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs.svg)](https://asciinema.org/a/A60uZ52lhjCKnalxVrZgaumqs)
