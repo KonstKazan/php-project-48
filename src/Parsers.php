@@ -17,7 +17,6 @@ function parse(string $pathToFile,): array
 {
     $path = getRealPath($pathToFile);
     $file = file_get_contents($path);
-    $decodeFile = [];
     if ($file !== false) {
         // die('File not found');
         if ((pathinfo($pathToFile, PATHINFO_EXTENSION) === 'json')) {
@@ -25,6 +24,8 @@ function parse(string $pathToFile,): array
         } else {
             $decodeFile = Yaml::parse($file);
         }
+    } else {
+        $decodeFile = [];
     }
     return $decodeFile;
 }
