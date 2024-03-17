@@ -17,9 +17,9 @@ $ git clone https://github.com/KonstKazan/php-project-48.git
 $ cd php-project-48
 $ make install
 ```
-```sh
-Generate diff
- 
+
+### Generate diff
+ ```sh
 Usage:
     gendiff (-h|--help)
     gendiff (-v|--version)
@@ -29,4 +29,3 @@ Options:
     -h --help                     Show this screen
     -v --version                  Show version
     --format <fmt>                Report format [default: stylish]
-    
