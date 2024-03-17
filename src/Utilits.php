@@ -40,9 +40,8 @@ function toString(mixed $value): mixed
 
         $keys = array_keys($value);
         return array_map(function ($key) use ($value) {
-            $value = (is_array($value[$key])) ? toString($value[$key]) : $value[$key];
-
-            return makeNode('unchanged', $key, $value);
+            $newValue = (is_array($value[$key])) ? toString($value[$key]) : $value[$key];
+            return makeNode('unchanged', $key, $newValue);
         }, $keys);
     // };
 
