@@ -4,7 +4,7 @@ namespace App\Diff\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use function App\Diff\gendiff;
+use function App\Diff\genDiff;
 
 class DiffTest extends TestCase
 {
@@ -28,28 +28,28 @@ class DiffTest extends TestCase
     public function testStylishJson(): void
     {
         $expected = file_get_contents($this -> pathToResultStylish);
-        $result = gendiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'stylish');
+        $result = genDiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'stylish');
         $this->assertEquals($expected, $result);
     }
 
     public function testStylishYaml(): void
     {
         $expected = file_get_contents($this -> pathToResultStylish);
-        $result = gendiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'stylish');
+        $result = genDiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'stylish');
         $this->assertEquals($expected, $result);
     }
 
     public function testPlainJson(): void
     {
         $expected = file_get_contents($this -> pathToResultPlain);
-        $result = gendiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'plain');
+        $result = genDiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'plain');
         $this->assertEquals($expected, $result);
     }
 
     public function testPlainYaml(): void
     {
         $expected = file_get_contents($this -> pathToResultPlain);
-        $result = gendiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'plain');
+        $result = genDiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'plain');
         $this->assertEquals($expected, $result);
     }
 }
