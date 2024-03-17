@@ -17,12 +17,12 @@ class DiffTest extends TestCase
 
     public function setUp(): void
     {
-        $this -> pathToJsonOne = "tests/fixtures/file1.json";
-        $this -> pathToJsonTwo = "tests/fixtures/file2.json";
-        $this -> pathToYamlOne = "tests/fixtures/file1.yml";
-        $this -> pathToYamlTwo = "tests/fixtures/file2.yml";
-        $this -> pathToResultStylish = "tests/fixtures/resultStylish.txt";
-        $this -> pathToResultPlain = "tests/fixtures/resultPlain.txt";
+        $this -> pathToJsonOne = "/tests/fixtures/file1.json";
+        $this -> pathToJsonTwo = "/tests/fixtures/file2.json";
+        $this -> pathToYamlOne = "/tests/fixtures/file1.yml";
+        $this -> pathToYamlTwo = "/tests/fixtures/file2.yml";
+        $this -> pathToResultStylish = __DIR__ . "/fixtures/resultStylish.txt";
+        $this -> pathToResultPlain = __DIR__ . "/fixtures/resultPlain.txt";
     }
 
     public function testStylishJson(): void

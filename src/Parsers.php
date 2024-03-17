@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 function parse(string $pathToFile,): array
 {
-    $file = file_get_contents(__DIR__ . "/../" . $pathToFile);
+    $file = file_get_contents(dirname(__DIR__, 1) . $pathToFile);
     if ($file === false) {
         exit('File not found');
     }
