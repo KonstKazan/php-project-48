@@ -35,7 +35,7 @@ function formatPlain(array $astTree, string $propertyName = ''): string
         } elseif ($status === 'changed') {
             $convertValue = convertValue($value);
             $convertValueTwo = convertValue($valueTwo);
-            return 'Property ' . "$newPropertyName" . ' was updated. From ' . $convertValue . ' to ' . $convertValueTwo;
+            return 'Property ' . "'$newPropertyName'" . ' was updated. From ' . $convertValue . ' to ' . $convertValueTwo;
         } elseif ($status === 'unchanged') {
             return;
         }
