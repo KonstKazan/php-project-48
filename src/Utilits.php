@@ -30,10 +30,6 @@ function buildThree(array $decodeFileOne, array $decodeFileTwo): array
     $fileOneKeys = array_keys($decodeFileOne);
     $fileTwoKeys = array_keys($decodeFileTwo);
     $arrayKeys = array_unique(array_merge($fileOneKeys, $fileTwoKeys));
-    // $sortArrayKeys = $arrayKeys;
-    // uasort($sortArrayKeys, function ($valueOne, $valueTwo) {
-    //     return strcmp($valueOne, $valueTwo);
-    // });
     $sortArrayKeys = sort($arrayKeys, fn ($left, $right) => strcmp($left, $right));
     return array_map(fn ($key) => createAst($key, $decodeFileOne, $decodeFileTwo), $sortArrayKeys);
 }

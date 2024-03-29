@@ -8,13 +8,17 @@ use function Differ\Formatters\Stylish\formatStylish;
 
 function formatThree(array $three, string $format): string|false
 {
-    if ($format === 'stylish') {
-        return formatStylish($three);
-    } elseif ($format === 'plain') {
-        return formatPlain(($three));
-    } elseif ($format === 'json') {
-        return formatJson($three);
-    } else {
-        return 'Unknow format';
+    switch ($format) {
+        case 'stylish':
+            return formatStylish($three);
+            break;
+        case 'plain':
+            return formatPlain(($three));
+            break;
+        case 'json':
+            return formatJson($three);
+            break;
+        default:
+            throw new \Exception("$format is unknow format!");
     }
 }
