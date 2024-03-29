@@ -4,7 +4,7 @@
 
 use function Differ\Differ\genDiff;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../src/Require-autoload.php';
 
 $doc = <<<DOC
 Generate diff
