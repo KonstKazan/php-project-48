@@ -17,14 +17,18 @@ function parse(string $pathToFile,): array
 {
     $path = getRealPath($pathToFile);
     $file = file_get_contents($path);
-    if ($file !== false) {
-        if ((pathinfo($pathToFile, PATHINFO_EXTENSION) === 'json')) {
-            $decodeFile = json_decode($file, true);
-        } else {
-            $decodeFile = Yaml::parse($file);
-        }
-    } else {
-        $decodeFile = [];
+    $extension = pathinfo($pathToFile, PATHINFO_EXTENSION);
+    if ($file === false) {
+        throw new \Exception("Path to file is invalid!");
     }
-    return $decodeFile;
+    switch ($extension) {
+        case 'json':
+            return json_decode($file, true);
+            break;
+        case 'yaml':
+        case 'yml':
+            return Yaml::parse($file);
+        default:
+            throw new \Exception("$extension is invalid format!");
+    }
 }
