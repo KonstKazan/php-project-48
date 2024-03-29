@@ -1,6 +1,4 @@
 parameters:
-  phpstanFunctionalProgramming:
-    disallowUnusedExpression: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
     level: 8
