@@ -11,6 +11,12 @@
 #### An application for finding differences in JSON and YAML files
 
 
+## Requirements
+```sh
+PHP = 8.2
+```
+
+
 ## Setup
 ```sh
 $ git clone https://github.com/KonstKazan/php-project-48.git

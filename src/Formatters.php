@@ -6,7 +6,7 @@ use function Differ\Formatters\Json\formatJson;
 use function Differ\Formatters\Plain\formatPlain;
 use function Differ\Formatters\Stylish\formatStylish;
 
-function formatThree(array $three, string $format): string|false
+function formatThree(array $three, string $format): string
 {
     switch ($format) {
         case 'stylish':

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1711717607">
-  <project timestamp="1711717607">
+<coverage generated="1711801141">
+  <project timestamp="1711801141">
     <file name="/home/konstantin/php/php-project-48/src/Differ.php">
       <line num="11" type="stmt" count="12"/>
       <line num="12" type="stmt" count="12"/>
@@ -9,14 +9,14 @@
       <metrics loc="16" ncloc="16" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/konstantin/php/php-project-48/src/Formatters.php">
-      <line num="11" type="stmt" count="12"/>
-      <line num="12" type="stmt" count="6"/>
+      <line num="12" type="stmt" count="12"/>
       <line num="13" type="stmt" count="6"/>
       <line num="14" type="stmt" count="6"/>
-      <line num="15" type="stmt" count="0"/>
+      <line num="15" type="stmt" count="6"/>
       <line num="16" type="stmt" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <metrics loc="21" ncloc="21" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="4" elements="7" coveredelements="4"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <metrics loc="22" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="4" elements="7" coveredelements="4"/>
     </file>
     <file name="/home/konstantin/php/php-project-48/src/Formatters/Json.php">
       <line num="7" type="stmt" count="0"/>
@@ -77,17 +77,33 @@
     <file name="/home/konstantin/php/php-project-48/src/Parsers.php">
       <line num="9" type="stmt" count="12"/>
       <line num="10" type="stmt" count="12"/>
+      <line num="11" type="stmt" count="12"/>
       <line num="12" type="stmt" count="12"/>
-      <line num="13" type="stmt" count="12"/>
-      <line num="18" type="stmt" count="12"/>
-      <line num="19" type="stmt" count="12"/>
+      <line num="13" type="stmt" count="0"/>
+      <line num="15" type="stmt" count="12"/>
       <line num="20" type="stmt" count="12"/>
-      <line num="22" type="stmt" count="12"/>
-      <line num="23" type="stmt" count="4"/>
-      <line num="25" type="stmt" count="8"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="12"/>
-      <metrics loc="32" ncloc="31" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="12" coveredelements="11"/>
+      <line num="25" type="stmt" count="12"/>
+      <line num="26" type="stmt" count="12"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="12"/>
+      <line num="34" type="stmt" count="12"/>
+      <line num="35" type="stmt" count="12"/>
+      <line num="36" type="stmt" count="12"/>
+      <line num="39" type="stmt" count="12"/>
+      <line num="40" type="stmt" count="4"/>
+      <line num="41" type="stmt" count="8"/>
+      <line num="42" type="stmt" count="4"/>
+      <line num="43" type="stmt" count="8"/>
+      <line num="45" type="stmt" count="0"/>
+      <metrics loc="48" ncloc="48" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="17" elements="20" coveredelements="17"/>
+    </file>
+    <file name="/home/konstantin/php/php-project-48/src/RequireAutoload.php">
+      <line num="5" type="stmt" count="0"/>
+      <line num="6" type="stmt" count="0"/>
+      <line num="8" type="stmt" count="0"/>
+      <line num="9" type="stmt" count="0"/>
+      <line num="11" type="stmt" count="0"/>
+      <metrics loc="13" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="5" coveredelements="0"/>
     </file>
     <file name="/home/konstantin/php/php-project-48/src/Utilits.php">
       <line num="9" type="stmt" count="12"/>
@@ -103,21 +119,21 @@
       <line num="30" type="stmt" count="12"/>
       <line num="31" type="stmt" count="12"/>
       <line num="32" type="stmt" count="12"/>
-      <line num="37" type="stmt" count="12"/>
-      <line num="38" type="stmt" count="12"/>
-      <line num="43" type="stmt" count="12"/>
-      <line num="44" type="stmt" count="12"/>
+      <line num="33" type="stmt" count="12"/>
+      <line num="34" type="stmt" count="12"/>
+      <line num="39" type="stmt" count="12"/>
+      <line num="40" type="stmt" count="12"/>
+      <line num="41" type="stmt" count="12"/>
+      <line num="42" type="stmt" count="6"/>
       <line num="45" type="stmt" count="12"/>
-      <line num="46" type="stmt" count="6"/>
+      <line num="46" type="stmt" count="12"/>
       <line num="49" type="stmt" count="12"/>
       <line num="50" type="stmt" count="12"/>
       <line num="53" type="stmt" count="12"/>
       <line num="54" type="stmt" count="12"/>
       <line num="57" type="stmt" count="12"/>
-      <line num="58" type="stmt" count="12"/>
-      <line num="61" type="stmt" count="12"/>
-      <metrics loc="63" ncloc="59" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="26" coveredelements="26"/>
+      <metrics loc="59" ncloc="59" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="26" coveredelements="26"/>
     </file>
-    <metrics files="7" loc="219" ncloc="214" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="91" elements="96" coveredelements="91"/>
+    <metrics files="8" loc="245" ncloc="245" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="109" coveredstatements="97" elements="109" coveredelements="97"/>
   </project>
 </coverage>

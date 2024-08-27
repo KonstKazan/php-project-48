@@ -4,12 +4,37 @@ namespace Differ\Utilits;
 
 use function Functional\sort;
 
-function makeNode(string $status, string $key, mixed $valueOne, mixed $valueTwo = null): array
+function getRealPath(string $pathToFile): string
+{
+    $addedPart = $pathToFile[0] === '/' ? '' : __DIR__ . "/../";
+    $fullPath = $addedPart . $pathToFile;
+    $realPath = realpath($fullPath);
+    if ($realPath === false) {
+        throw new \Exception("File not exists");
+    }
+    return $realPath;
+}
+
+function getExtension(string $pathToFile): string
+{
+    return pathinfo($pathToFile, PATHINFO_EXTENSION);
+}
+
+function getFile(string $path): string
+{
+    $file = file_get_contents($path);
+    if ($file === false) {
+        throw new \Exception("Path to file is invalid!");
+    }
+    return $file;
+}
+
+function makeNode(string $status, string $key, string|array $valueOne, string|array $valueTwo = null): array
 {
     return ['status' => $status, 'key' => $key, 'valueOne' => $valueOne, 'valueTwo' => $valueTwo];
 }
 
-function toString(mixed $value): mixed
+function toString(mixed $value): string|array
 {
     if (!is_array($value)) {
         if ($value === null) {

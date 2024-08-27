@@ -2,7 +2,10 @@
 
 namespace Differ\Formatters\Json;
 
-function formatJson(array $astTree): string|false
+function formatJson(array $astTree): string
 {
-    return json_encode($astTree);
+    if (json_encode($astTree)) {
+        return json_encode($astTree);
+    }
+    throw new \Exception("Unknow error!");
 }

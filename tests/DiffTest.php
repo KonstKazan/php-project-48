@@ -47,85 +47,97 @@ class DiffTest extends TestCase
 
     public function testStylishJson(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylish);
+        // $expected = file_get_contents($this -> pathToResultStylish);
         $result = genDiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylish, $result);
     }
 
     public function testStylishJsonNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylishNested);
+        // $expected = file_get_contents($this -> pathToResultStylishNested);
         $result = genDiff($this -> pathToJsonThree, $this -> pathToJsonFour, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylishNested, $result);
     }
 
     public function testStylishYaml(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylish);
+        // $expected = file_get_contents($this -> pathToResultStylish);
         $result = genDiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylish, $result);
     }
 
     public function testStylishYamlNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylishNested);
+        // $expected = file_get_contents($this -> pathToResultStylishNested);
         $result = genDiff($this -> pathToYamlThree, $this -> pathToYamlFour, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylishNested, $result);
     }
 
     public function testStylishYml(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylish);
+        // $expected = file_get_contents($this -> pathToResultStylish);
         $result = genDiff($this -> pathToYmlOne, $this -> pathToYmlTwo, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylish, $result);
     }
 
     public function testStylishYmlNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultStylishNested);
+        // $expected = file_get_contents($this -> pathToResultStylishNested);
         $result = genDiff($this -> pathToYmlThree, $this -> pathToYmlFour, 'stylish');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultStylishNested, $result);
     }
 
     public function testPlainJson(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlain);
+        // $expected = file_get_contents($this -> pathToResultPlain);
         $result = genDiff($this -> pathToJsonOne, $this -> pathToJsonTwo, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlain, $result);
     }
 
     public function testPlainJsonNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlainNested);
+        // $expected = file_get_contents($this -> pathToResultPlainNested);
         $result = genDiff($this -> pathToJsonThree, $this -> pathToJsonFour, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlainNested, $result);
     }
 
     public function testPlainYaml(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlain);
+        // $expected = file_get_contents($this -> pathToResultPlain);
         $result = genDiff($this -> pathToYamlOne, $this -> pathToYamlTwo, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlain, $result);
     }
 
     public function testPlainYamlNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlainNested);
+        // $expected = file_get_contents($this -> pathToResultPlainNested);
         $result = genDiff($this -> pathToYamlThree, $this -> pathToYamlFour, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlainNested, $result);
     }
 
     public function testPlainYml(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlain);
+        // $expected = file_get_contents($this -> pathToResultPlain);
         $result = genDiff($this -> pathToYmlOne, $this -> pathToYmlTwo, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlain, $result);
     }
 
     public function testPlainYmlNested(): void
     {
-        $expected = file_get_contents($this -> pathToResultPlainNested);
+        // $expected = file_get_contents($this -> pathToResultPlainNested);
         $result = genDiff($this -> pathToYmlThree, $this -> pathToYmlFour, 'plain');
-        $this->assertEquals($expected, $result);
+        // $this->assertEquals($expected, $result);
+        $this->assertStringEqualsFile($this -> pathToResultPlainNested, $result);
     }
 }
