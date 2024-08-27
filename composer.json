@@ -24,6 +24,7 @@
         }
     ],
     "require": {
+        "php" : ">=8.2",
         "docopt/docopt": "^1.0",
         "tightenco/collect": "^9.33",
         "nesbot/carbon": "^2.64",
