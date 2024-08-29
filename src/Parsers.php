@@ -6,10 +6,6 @@ use Symfony\Component\Yaml\Yaml;
 
 function parse(string $extension, string $file): array
 {
-    // $path = getRealPath($pathToFile);
-    // $file = getFile($path);
-    // $extension = getExtension($pathToFile);
-
     switch ($extension) {
         case 'json':
             return json_decode($file, true);

@@ -11,12 +11,6 @@ use function Differ\Utilits\getRealPath;
 
 function genDiff(string $pathToFileOne, string $pathToFileTwo, string $format = 'stylish'): string
 {
-    try {
-        getRealPath($pathToFileOne);
-        getRealPath($pathToFileTwo);
-    } catch (\Exception $e) {
-        echo $e->getMessage(), "\n";
-    }
     $pathOne = getRealPath($pathToFileOne);
     $pathTwo = getRealPath($pathToFileTwo);
     $fileOne = getFile($pathOne);
