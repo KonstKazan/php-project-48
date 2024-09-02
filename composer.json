@@ -31,7 +31,6 @@
         "lstrojny/functional-php": "^1.17"
       },
       "require-dev": {
-        "psy/psysh": "@stable",
         "symfony/var-dumper": "^6.2.1",
         "phpunit/phpunit": "^9.5.26",
         "squizlabs/php_codesniffer": "^3.7.1"
