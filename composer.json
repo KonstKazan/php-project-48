@@ -23,6 +23,7 @@
         }
     ],
     "require": {
+        "php" : "8.2",
         "docopt/docopt": "^1.0",
         "symfony/string": "^6.2",
         "symfony/yaml": "^7.0",
