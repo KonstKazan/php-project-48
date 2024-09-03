@@ -5,7 +5,7 @@ console:
 	composer exec --verbose psysh
 
 validate:
-	composer validate
+	composer validate --no-check-publish
 
 lint:
 	composer exec --verbose phpcs -- --standard=PSR12 src tests
