@@ -55,8 +55,8 @@ function buildThree(array $decodeFileOne, array $decodeFileTwo): array
 
 function createAst(string $key, array $fileOne, array $fileTwo): array
 {
-    $valueOne = isset($fileOne[$key]) ? $fileOne[$key] : null;
-    $valueTwo = isset($fileTwo[$key]) ? $fileTwo[$key] : null;
+    $valueOne = $fileOne[$key] ?? null;
+    $valueTwo = $fileTwo[$key] ?? null;
     if (is_array($valueOne) && is_array($valueTwo)) {
         return makeNode('nested', $key, buildThree($valueOne, $valueTwo));
     }

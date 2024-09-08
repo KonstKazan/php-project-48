@@ -38,9 +38,9 @@ function formatPlain(array $astTree, string $propertyName = ''): string
             return 'Property ' . "'$newPropertyName'" . ' was updated. From ' .
             $convertValue . ' to ' . $convertValueTwo;
         } elseif ($status === 'unchanged') {
-            return;
+            return '';
         }
     }, $astTree);
-    $filteredResult = array_diff($result, array(''));
+    $filteredResult = array_diff($result, ['']);
     return implode(PHP_EOL, $filteredResult);
 }

@@ -1,21 +1,18 @@
 {
     "name": "hexlet/code",
+    "description": "An application for finding differences in JSON and YAML files",
+    "type":"library",
     "autoload": {
         "files": [
             "src/Differ.php",
             "src/Parsers.php",
             "src/Formatters.php",
-            "src/Reading-file.php",
+            "src/ReadingFile.php",
             "src/Formatters/Stylish.php",
             "src/Formatters/Plain.php",
             "src/Formatters/Json.php"
         ]
     },
-    "autoload-dev": {
-        "psr-4": {
-          "Hexlet\\Code\\Tests\\": "tests"
-        }
-      },
     "authors": [
         {
             "name": "Konstantin",

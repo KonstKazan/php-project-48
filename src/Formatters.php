@@ -16,6 +16,6 @@ function formatThree(array $three, string $format): string
         case 'json':
             return formatJson($three);
         default:
-            throw new \Exception("$format is unknow format!");
+            throw new \Exception("$format is unknown format!");
     }
 }

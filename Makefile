@@ -1,9 +1,6 @@
 install:
 	composer install
 
-console:
-	composer exec --verbose psysh
-
 validate:
 	composer validate --no-check-publish
 
