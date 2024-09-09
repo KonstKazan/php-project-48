@@ -9,6 +9,15 @@ use function Differ\Reading\File\getFile;
 use function Differ\Reading\File\getRealPath;
 use function Functional\sort;
 
+function buildThree(array $decodeFileOne, array $decodeFileTwo): array
+{
+    $fileOneKeys = array_keys($decodeFileOne);
+    $fileTwoKeys = array_keys($decodeFileTwo);
+    $arrayKeys = array_unique(array_merge($fileOneKeys, $fileTwoKeys));
+    $sortArrayKeys = sort($arrayKeys, fn ($left, $right) => strcmp($left, $right));
+    return array_map(fn ($key) => createAst($key, $decodeFileOne, $decodeFileTwo), $sortArrayKeys);
+}
+
 function genDiff(string $pathToFileOne, string $pathToFileTwo, string $format = 'stylish'): string
 {
     $pathOne = getRealPath($pathToFileOne);
@@ -42,15 +51,6 @@ function toString(mixed $value): string|array
             $newValue = (is_array($value[$key])) ? toString($value[$key]) : $value[$key];
             return makeNode('unchanged', $key, $newValue);
         }, $keys);
-}
-
-function buildThree(array $decodeFileOne, array $decodeFileTwo): array
-{
-    $fileOneKeys = array_keys($decodeFileOne);
-    $fileTwoKeys = array_keys($decodeFileTwo);
-    $arrayKeys = array_unique(array_merge($fileOneKeys, $fileTwoKeys));
-    $sortArrayKeys = sort($arrayKeys, fn ($left, $right) => strcmp($left, $right));
-    return array_map(fn ($key) => createAst($key, $decodeFileOne, $decodeFileTwo), $sortArrayKeys);
 }
 
 function createAst(string $key, array $fileOne, array $fileTwo): array
